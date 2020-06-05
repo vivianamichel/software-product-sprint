@@ -10,11 +10,18 @@
 }
 
 #resume{
+   font-family: "Gill Sans", sans-serif;
    background-color: rgba(67, 75, 78, 0.89);
    color: #f2f2f2;
    padding: 10px 12px;
 }
 
+#projects{
+   font-family: "Gill Sans", sans-serif;
+   background-color: rgba(134, 147, 151, 0.89);
+   color: #f2f2f2;
+   padding: 10px 12px;
+}
 
 .topnav {
   background-color: #333;
@@ -35,7 +42,14 @@
   color: black;
 }
 
-.topnav a.active {
+/* .topnav a.active {
   background-color: rgb(150, 151, 150)
   color: white;
+} */
+
+#left{
+     float:left;
+}
+#right{
+     float:right;
 }
