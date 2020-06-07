@@ -7,12 +7,12 @@
     <script src="script.js"></script>
   </head>
   <div class="topnav">
-     <a href="#home" style="float:left"> Viviana Michel</a>
-     <a href="#news" style="float:right">About</a>
-     <a href="#contact" style="float:right">Projects</a>
-     <a href="#about" style="float:right">Resume</a>
+     <a href="#home" style="float:left"> VIVIANA MICHEL</a>
+     <a href="#contact" style="float:right">PROJECTS</a>
+     <a href="#about" style="float:right">RÉSUMÉ</a>
   </div>
   <body>
+      <img src="images/me.jpg">
     <div id="content">
       <h2>Hello! My name is Viviana Michel</h2>
       <p>I am a rising junior studying computer science and data science at UC Berkeley.</p>
@@ -21,81 +21,120 @@
       <div id="greeting-container"></div>
     </div>
     <div id="resume">
-        <h4 style="text-align: center">RÉSUMÉ</h4>
-        <h4 >EDUCATION</h4><hr>
-        <h3>
+        <h4>RÉSUMÉ</h4>
+        <h4 id="title">EDUCATION</h4><hr>
+        <img src="https://brand.berkeley.edu/wp-content/uploads/2016/10/ucbseal_139_540.png" id="image" align=left width="90" height="90" alt="berkeley logo">
+         <h3>
             <span id="left">University of California, Berkeley</span>
             <span id="right">2018-2022</span>
-        </h3><br>
-        <h4>Data Science and Computer Science, B.A<h4>
-        <h4>Relevant Coursework:</h4>
-            <ul>
+        </h3>
+        <h4 id="major">Data Science and Computer Science, B.A<h4>
+        <h4 id="clist">Relevant Coursework:</h4>
+            <ul id="clist">
             <li>Structure and Interpretations of Computer Programs</li>
             <li>Data Structures</li>
             <li>Discrete Mathematics and Probability Theory</li>
             <li>The Foundations of Data Science</li>
             <li>Designing Information Devices and Systems I</li>
             </ul><br>
-        <h4>RELEVANT EXPERIENCE</h4><hr>
+        <h4 id="title">RELEVANT EXPERIENCE</h4><hr>
         <h3>
             <span id="left">Oculate Full-Stack Software Engineer Intern</span>
             <span id="right">July 2019 - August 2019</span>
-        </h3><br>
-        <h4>
+        </h3>
+        <h4 id="text">
         Built the frontend and backend of an admin panel to increase efficiency for managing 
         ophthalmology surgery consignment to oversee relations between distributors, medical 
         practices, and surgery products from suppliers such as Hoya, Albomed GmbH, and Moria 
         Ophthalmic. Used Ionic, Angular, Loopback, JavaScript, Typescript, HTML, CSS to create 
         admin panel. To store and query data used MySQL, JWT for tokens and authorizations and 
         Mocha to create tests.
-        </h4>
+        </h4><br>
         <h3>
-            <span id="left">Google Computer Science Summer Institute</span>
+            <span id="left" style>Google Computer Science Summer Institute</span>
             <span id="right">July 2018</span>
-        </h3><br>
-        <h4>
+        </h3>
+        <h4 id="text">
             Participated in a three-week program in which I developed coding skills in JavaScript, 
             Python, HTML, CSS, implementing API’s and connecting these with AppEngine to create a 
             web app from Google Software Engineers.
         </h4><br>
-        <h4>ACTIVITIES</h4><hr>
+        <h4 id="title">ACTIVITIES</h4><hr>
         <h3>
             <span id="left">UC Berkeley Academic Intern</span>
             <span id="right">August 2019 - May 2020</span>
-        </h3><br>
-        <h4>I am a lab assistant for the course Structure and Interpretation of Computer Programs, 
+        </h3>
+        <h4 id="text">I am a lab assistant for the course Structure and Interpretation of Computer Programs, 
             which is a class taught in primarily Python but also Scheme and SQL. I give lab lectures 
             and assist students with any questions regarding concepts and debugging their code.
-        </h4>
+        </h4><br>
         <h3>
             <span id="left">Women in Computer Science and Engineering</span>
             <span id="right">September 2018 - Present</span>
-        </h3><br>
-        <h4>
+        </h3>
+        <h4 id="text">
             A group of women which help empower other women through informing others of different programs 
             and events happening in the area as well as volunteer opportunities. Helps to develop a strong 
             professional network.
-        </h4>
+        </h4><br>
         <h3>
             <span id="left">Design Team UC Berkeley Biomedical Engineering Society</span>
             <span id="right">September 2019 - Present</span>
-        </h3><br>
-        <h4>
+        </h3>
+        <h4 id="text">
            I am a part of the design team which designs concepts and practical uses such as drafting and 
            3D-printing original models, and designing websites.
         </h4><br>
-        <h4>WORK EXPERIENCE</h4><hr>
+        <h4 id="title">WORK EXPERIENCE</h4><hr>
         <h3>
             <span id="left">Cal Athletics Events Management</span>
             <span id="right">September 2019 – Present</span>
-        </h3><br>
-        <h4>
+        </h3>
+        <h4 id="text">
             Analyze and coordinate equipment necessary to ensure our events run as planned. Liaison between 
             necessary personnel to ensure they are present and optimum efficiency is met during our events.
         </h4>
     </div>
     <div id="projects">
         <h2 style="text-align: center">Projects</h2>
-    </div>
+        <div class="card">
+            <img src="https://image.flaticon.com/icons/svg/220/220618.svg" alt="Tweeter logo" style="width:100%" height="180">
+                <h1>Happy Tweeter</h1>
+             <p class="ctitle">Created a social media platform, similar to Twitter for tweens. Before anything can be posted 
+                 an AI determines the niceness of the message. Anything negative can not be posted. Built using Ionic and 
+                 Angular and implemented Google Firebase to store data.</p>
+        </div>
+        <div class="card">
+            <img src="https://miro.medium.com/max/700/1*r46_PENruSre5iTHcwGPTQ.png" alt="version control system image" style="width:100%" height="180">
+                <h1>Gitlet</h1>
+             <p class="ctitle">Created a version-control system that mimics some of the basic features of Git in Java. The program created a 
+                 backup system of collections of files, to save versions of project periodically and the ability to restore to previous 
+                 versions. Implemented serializable to save contents of files in bytes.</p>
+        </div>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Enigma_%28crittografia%29_-_Museo_scienza_e_tecnologia_Milano.jpg" style="width:80%" height="180">
+                <h1>Enigma</h1>
+             <p class="ctitle">The Enigma machine was an encryption device used by Germany during WWII. The original device had a set variables such as the sequence of the 
+                 alphabet used or the amount of rotors etc. I coded a version in which all of these coould be adjusted. Written in Java.</p>
+        </div>
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR3jKdzZTNE_aN6PfGfuewN6AtsfewyO0vkj_GDfflUD_FOD7Aq&usqp=CAU" style="width:60%" height="180">
+                <h1>TechTogether Boston Hackathon</h1>
+             <p class="ctitle">Created a web app using Python, JavaScript, CSS, HTML and AppEngine. Its goal was to reduce waste by allowing users to compete 
+                 against one another. I worked with Google Login API to store an individual’s unique data and Google Maps API to connect nearby users.</p>
+        </div>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Lambda_lc.svg/200px-Lambda_lc.svg.png" style="width:60%" height="180">
+                <h1>Scheme</h1>
+             <p class="ctitle">Created a scheme interpreter in Python. Code is inputted in scheme and the program translates the input to
+                python and gives return or error messages accordingly.</p>
+        </div>
+        <div class="card">
+            <img src="https://i.dlpng.com/static/png/5088885-black-and-white-earth-png-94-images-in-collection-page-1-earth-black-and-white-png-1000_1000_preview.png" style="width:70%" height="180">
+                <h1>NuPlanet</h1>
+                <h2>www.nu-planet.appspot.com</h2>
+             <p class="ctitle"> Webapp created to promote a healthier life style using CSS, 
+                 HTML, JS, Python and AppEngine. Implements Google Login API and Maps API</p>
+        </div>
   </body>
 </html>

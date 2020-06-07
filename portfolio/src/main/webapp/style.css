@@ -24,11 +24,13 @@
 }
 
 .topnav {
+  position: sticky;
   background-color: #333;
   overflow: hidden;
 }
 
 .topnav a {
+  position: sticky;
   font-family: "Gill Sans", sans-serif;
   color: #f2f2f2;
   text-align: center;
@@ -38,6 +40,7 @@
 }
 
 .topnav a:hover {
+  position: sticky;
   background-color: #ddd;
   color: black;
 }
@@ -48,8 +51,43 @@
 } */
 
 #left{
-     float:left;
+     position: relative;
 }
 #right{
      float:right;
+}
+
+#title{
+    text-align:center;
+}
+
+#major{
+    position: relative;
+    left: 20px;
+}
+
+#clist{
+    position: relative;
+    left: 130px;
+}
+
+#text{
+    position: relative;
+    left: 110px;
+}
+
+.card {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  float: left;
+  width: 28%;
+  padding: 30px;
+  margin: auto;
+  text-align: center;
+  color: black
+}
+
+.ctitle {
+  color: grey;
+  font-size: 18px;
 }
