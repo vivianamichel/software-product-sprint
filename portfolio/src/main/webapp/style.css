@@ -24,8 +24,20 @@
    padding: 10px 12px;
 }
 
+#contactcard{
+    background-color: black;
+    font-family: "Gill Sans", sans-serif;
+    color: white;
+    text-align:center;
+    padding: 20px;
+    margin: auto;
+    overflow: hidden;
+    bottom: 0;
+    width: 100%;
+}
+
 .topnav {
-  position: sticky;
+  position: stickt;
   background-color: #333;
   overflow: hidden;
 }
