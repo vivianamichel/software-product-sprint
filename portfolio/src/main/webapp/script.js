@@ -35,12 +35,15 @@ function getResponse() {
 }
 
 function getDataStats() {
-  fetch('/data').then(response => response.json()).then((toDisplay) => {
-    const statsListElement = document.getElementById('data-container');
+  fetch('/data').then(response => response.json()).then((stats) => {
+    const statsListElement = document.getElementById('data-stats-container');
     statsListElement.innerHTML = '';
-    console.log(typeof toDisplay);
     statsListElement.appendChild(
-        createListElement(toDisplay));
+        createListElement('Date Created: ' + stats.dateCreated));
+    statsListElement.appendChild(
+        createListElement('Name: ' + stats.userName));
+    statsListElement.appendChild(
+        createListElement("Comment: " + stats.comment));
   });
 }
 

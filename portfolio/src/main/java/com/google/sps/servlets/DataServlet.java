@@ -20,43 +20,56 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
-// import com.google.sps.data.ServerStats;
+import com.google.sps.data.DataStats;
 import com.google.gson.Gson;
+import java.util.Date;
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
-   private ArrayList<String> toDisplay;
 
-  @Override
-  public void init() {
-    toDisplay = new ArrayList<>();
-    toDisplay.add("Hi, my first name is Viviana");
-    toDisplay.add("Last name Michel");
-    toDisplay.add("Today is the 14th");
-  }
+   private final Date dateCreated = new Date();
 
-  @Override
-  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    response.setContentType("text/html;");
-    response.getWriter().println("Hello Viviana!");
-    String json = convertToJson(toDisplay);
-    response.setContentType("application/json;");
-    response.getWriter().println(json);
-  }
+   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+       String[] userInputs = getUserInputs(request);
+       String userName = userInputs[0];
+       String userComment = userInputs[1];
+       DataStats dataStats = new DataStats(dateCreated, userName, userComment);
+       String json = convertToJson(dataStats);
+       response.setContentType("application/json;");
+       response.getWriter().println(json);
+   }
 
-  private String convertToJson(ArrayList toDisplay) {
+    private String[] getUserInputs(HttpServletRequest request) {
+        String userNameString = request.getParameter("name-choice");
+        String userCommentString = request.getParameter("comment-choice");
+        String[] inputs = { userNameString, userCommentString};
+        return inputs;
+    }
+
+    // @Override
+    // public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    //  response.setContentType("text/html;");
+    //  response.getWriter().println("Hello Viviana!");
+    // }
+
+ private String convertToJson(DataStats dataStats) {
     String json = "{";
-    json += " " + toDisplay.get(0);
-    json += " " + toDisplay.get(1);
-    json += " " + toDisplay.get(2);
+    json += "\"dataCreated\": ";
+    json += "\"" + dataStats.getTime() + "\"";
+    json += ", ";
+    json += "\"userName\": ";
+    json += "\"" + dataStats.getUserName()  + "\"";
+    json += ", ";
+    json += "\"userComment\": ";
+    json += dataStats.getComment();
     json += "}";
     return json;
   }
 
-   private String convertToJsonUsingGson(ArrayList toDisplay) {
+   private String convertToJsonUsingGson(DataStats dataStats) {
     Gson gson = new Gson();
-    String json = gson.toJson(toDisplay);
+    String json = gson.toJson(dataStats);
     return json;
 }
 }
