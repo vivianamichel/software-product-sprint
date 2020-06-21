@@ -19,14 +19,44 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+// import com.google.sps.data.ServerStats;
+import com.google.gson.Gson;
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
+   private ArrayList<String> toDisplay;
+
+  @Override
+  public void init() {
+    toDisplay = new ArrayList<>();
+    toDisplay.add("Hi, my first name is Viviana");
+    toDisplay.add("Last name Michel");
+    toDisplay.add("Today is the 14th");
+  }
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     response.setContentType("text/html;");
-    response.getWriter().println("<h1>Hello Viviana!</h1>");
+    response.getWriter().println("Hello Viviana!");
+    String json = convertToJson(toDisplay);
+    response.setContentType("application/json;");
+    response.getWriter().println(json);
   }
+
+  private String convertToJson(ArrayList toDisplay) {
+    String json = "{";
+    json += " " + toDisplay.get(0);
+    json += " " + toDisplay.get(1);
+    json += " " + toDisplay.get(2);
+    json += "}";
+    return json;
+  }
+
+   private String convertToJsonUsingGson(ArrayList toDisplay) {
+    Gson gson = new Gson();
+    String json = gson.toJson(toDisplay);
+    return json;
+}
 }
