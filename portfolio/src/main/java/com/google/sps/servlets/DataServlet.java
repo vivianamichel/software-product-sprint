@@ -29,6 +29,15 @@ import java.util.Date;
 public class DataServlet extends HttpServlet {
 
    private final Date dateCreated = new Date();
+   public ArrayList<String> jsonData = new ArrayList<String>();
+
+
+  @Override
+  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    response.setContentType("application/json");
+    String json = new Gson().toJson(jsonData);
+    response.getWriter().println(json);
+  }
 
    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
        String[] userInputs = getUserInputs(request);
@@ -36,8 +45,9 @@ public class DataServlet extends HttpServlet {
        String userComment = userInputs[1];
        DataStats dataStats = new DataStats(dateCreated, userName, userComment);
        String json = convertToJson(dataStats);
+       jsonData.add(json);
        response.setContentType("application/json;");
-       response.getWriter().println(json);
+       response.getWriter().println(jsonData);
    }
 
     private String[] getUserInputs(HttpServletRequest request) {
@@ -46,12 +56,6 @@ public class DataServlet extends HttpServlet {
         String[] inputs = { userNameString, userCommentString};
         return inputs;
     }
-
-    // @Override
-    // public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    //  response.setContentType("text/html;");
-    //  response.getWriter().println("Hello Viviana!");
-    // }
 
  private String convertToJson(DataStats dataStats) {
     String json = "{";

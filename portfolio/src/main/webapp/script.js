@@ -27,27 +27,23 @@
 //   greetingContainer.innerText = greeting;
 // }
 
-function getResponse() {
-    console.log("Fetching data");
-    fetch('/data').then(response => response.text()).then((quote) => {
-    document.getElementById('data-container').innerText = quote;
-  });
-}
+// function getResponse() {
+//     console.log("Fetching data");
+//     fetch('/data').then(response => response.text()).then((quote) => {
+//     document.getElementById('data-container').innerText = quote;
+//   });
+// }
 
 function getDataStats() {
-  fetch('/data').then(response => response.json()).then((stats) => {
-    const statsListElement = document.getElementById('data-stats-container');
-    statsListElement.innerHTML = '';
-    statsListElement.appendChild(
-        createListElement('Date Created: ' + stats.dateCreated));
-    statsListElement.appendChild(
-        createListElement('Name: ' + stats.userName));
-    statsListElement.appendChild(
-        createListElement("Comment: " + stats.comment));
+    console.log("HELLO I AM WOKRING KIND OF")
+  fetch('/data').then(response => response.json()).then((jsonData) => {
+    const dataCommentsElement = document.getElementById('data-container');
+    jsonData.forEach((line) => {
+      dataCommentsElement.appendChild(createListElement(line));
+    });
   });
 }
 
-/** Creates an <li> element containing text. */
 function createListElement(text) {
   const liElement = document.createElement('li');
   liElement.innerText = text;
