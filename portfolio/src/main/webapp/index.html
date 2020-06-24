@@ -14,13 +14,14 @@
   </div>
   <body>
       <div>
-          <form action="/data" method="POST">
-          <input type="name" name="name-choice">
-          <input type="name" name="comment-choice">
-          <input type="submit" />
+          <form method="POST" action="/new-comment">
+            <input type="name" name="name-choice">
+            <input type="name" name="comment-choice">
+            <br>
+            <button>Submit</button>
           </form>
-          <button onclick="getDataStats()">Past Comments</button>
-          <ul id="data-container"></ul>
+          <button onclick="loadComments()">Past Comments</button>
+          <ul id="comment-list"></ul>
       </div>
       <img src="images/me.jpg" align=left width="350" height="400">
     <div id="content">
