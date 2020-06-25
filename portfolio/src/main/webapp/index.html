@@ -13,11 +13,18 @@
      <a href="#about" style="float:right">RÉSUMÉ</a>
   </div>
   <body>
-      <div>
-          <form method="POST" action="/new-comment">
+    <div>
+       <form method="POST" action="/new-comment">
             <input type="name" name="name-choice">
             <input type="name" name="comment-choice">
             <br>
+            <select id="language" name="languageCode">
+              <option value="en">English</option>
+              <option value="zh">Chinese</option>
+              <option value="es">Spanish</option>
+              <option value="hi">Hindi</option>
+              <option value="ar">Arabic</option>
+             </select>
             <button>Submit</button>
           </form>
           <button onclick="loadComments()">Past Comments</button>

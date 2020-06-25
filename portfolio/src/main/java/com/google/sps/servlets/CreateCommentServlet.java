@@ -26,6 +26,9 @@ import java.util.Date;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
+import com.google.cloud.translate.Translate;
+import com.google.cloud.translate.TranslateOptions;
+import com.google.cloud.translate.Translation;
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/new-comment")
@@ -36,10 +39,16 @@ public class CreateCommentServlet extends HttpServlet {
        long timestamp = System.currentTimeMillis();
        String userName = request.getParameter("name-choice");
        String userComment = request.getParameter("comment-choice");
+       String languageCode = request.getParameter("languageCode");
+       Translate translate = TranslateOptions.getDefaultInstance().getService();
+       Translation translation =
+            translate.translate(userComment, Translate.TranslateOption.targetLanguage(languageCode));
+       String translatedText = translation.getTranslatedText();
+
        Entity commentEntity = new Entity("Comment");
        commentEntity.setProperty("timestamp", timestamp);
        commentEntity.setProperty("userName", userName);
-       commentEntity.setProperty("userComment", userComment);
+       commentEntity.setProperty("userComment", translatedText);
        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
        datastore.put(commentEntity);
        response.sendRedirect("/index.html");

@@ -22,12 +22,23 @@ function loadComments() {
   });
 }
 
+function translateComments() {
+  fetch("/translate").then(response => response.json()).then((comments) => {
+    console.log("LOADING TRANSLATED COMMENTS")
+    const commentListElement = document.getElementById("comment-list");
+    comments.forEach((comment) => {
+      commentListElement.appendChild(createCommentElement(comment));
+    })
+  });
+}
+
 
 function createCommentElement(comment) {
   const commentElement = document.createElement('li');
   commentElement.className = 'comment';
  
   const titleElement = document.createElement('span');
+  console.log("COMMENT " + comment.userComment);
   titleElement.innerText = comment.userComment;
  
   const deleteButtonElement = document.createElement('button');
@@ -36,7 +47,6 @@ function createCommentElement(comment) {
     deleteComment(comment);
     commentElement.remove();
   });
- 
   commentElement.appendChild(titleElement);
   commentElement.appendChild(deleteButtonElement);
   return commentElement;
@@ -47,6 +57,26 @@ function deleteComment(comment) {
   params.append('id', comment.id);
   fetch('/delete-comment', {method: 'POST', body: params});
 }
+
+function requestTranslation() {
+        const text = document.getElementById('text').value;
+        const languageCode = document.getElementById('language').value;
+
+        const resultContainer = document.getElementById('result');
+        resultContainer.innerText = 'Loading...';
+
+        const params = new URLSearchParams();
+        params.append('text', text);
+        params.append('languageCode', languageCode);
+
+        fetch('/translate', {
+          method: 'POST',
+          body: params
+        }).then(response => response.text())
+        .then((translatedMessage) => {
+          resultContainer.innerText = translatedMessage;
+        });
+      }
  
  
 
