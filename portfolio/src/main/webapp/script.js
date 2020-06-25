@@ -38,8 +38,8 @@ function createCommentElement(comment) {
   commentElement.className = 'comment';
  
   const titleElement = document.createElement('span');
-  console.log("COMMENT " + comment.userComment);
   titleElement.innerText = comment.userComment;
+  
  
   const deleteButtonElement = document.createElement('button');
   deleteButtonElement.innerText = 'Delete';

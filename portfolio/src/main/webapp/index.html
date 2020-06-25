@@ -6,159 +6,42 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <div class="topnav">
-     <a href="#home" style="float:left"> VIVIANA MICHEL</a>
-     <a href="#about" style="float:right">CONTACT</a>
-     <a href="#contact" style="float:right">PROJECTS</a>
-     <a href="#about" style="float:right">RÉSUMÉ</a>
-  </div>
   <body>
-    <div>
-       <form method="POST" action="/new-comment">
-            <input type="name" name="name-choice">
-            <input type="name" name="comment-choice">
-            <br>
-            <select id="language" name="languageCode">
-              <option value="en">English</option>
-              <option value="zh">Chinese</option>
-              <option value="es">Spanish</option>
-              <option value="hi">Hindi</option>
-              <option value="ar">Arabic</option>
-             </select>
-            <button>Submit</button>
-          </form>
-          <button onclick="loadComments()">Past Comments</button>
-          <ul id="comment-list"></ul>
-      </div>
-      <img src="images/me.jpg" align=left width="350" height="400">
-    <div id="content">
-      <h2>Hello! My name is Viviana Michel</h2>
-      <p>I am a rising junior studying computer science and data science at UC Berkeley. I grew up in Oxnard, California which is where I have 
-          lived my whole life and where I took my first CS class on a whim. Since then I knew computer science was something I wanted to make a career in.</p>
-          <button onclick="getResponse()">hello</button>
-          <div id="data-container"></div>
-      <br><br><br><br><br><br><br><br>
+    <div class="background">
+      <div class="sidenav">
+        <a href="/index.html">
+            <img src="images/circleme.jpg" style="padding: 40px 0px 10px 90px;" width="220" height="220">
+         </a>
+        <div class="name">VIVIANA MICHEL</div>
+        <br><br><br>
+        <a href="/resume.html">MY CV</a>
+        <a href="/resume.html">PROJECTS</a>
+        <a href="/about.html">ABOUT</a>
+        <a href="/comments.html">COMMENTS</a>
+        <br><br>
+        <a>GET IN TOUCH</a>
+        <a style="float:left; padding-left: 80px" href="mailto:vmichel@berkeley.edu">
+            <img src="images/mail.jpg" height="30" weight="30">
+        </a>
+        <a style="float:left;"href="https://www.linkedin.com/in/viviana-michel-459621190/">
+            <img src="images/linkedin.png" height="30" weight="30">
+        </a>
+        <a style="float:left;" href="https://github.com/vivianamichel">
+            <img src="images/github.png" height="30" weight="30">
+        </a>
+        <a style="float:left;" href="https://www.instagram.com/vivianaamichel/">
+            <img src="images/insta.png" height="30" weight="30">
+        </a>
     </div>
-    <div id="resume">
-        <h4>RÉSUMÉ</h4>
-        <h4 id="title">EDUCATION</h4><hr>
-        <img src="https://brand.berkeley.edu/wp-content/uploads/2016/10/ucbseal_139_540.png" id="image" align=left width="90" height="90" alt="berkeley logo">
-         <h3>
-            <span id="left">University of California, Berkeley</span>
-            <span id="right">2018-2022</span>
-        </h3>
-        <h4 id="major">Data Science and Computer Science, B.A<h4>
-        <h4 id="clist">Relevant Coursework:</h4>
-            <ul id="clist">
-            <li>Structure and Interpretations of Computer Programs</li>
-            <li>Data Structures</li>
-            <li>Discrete Mathematics and Probability Theory</li>
-            <li>The Foundations of Data Science</li>
-            <li>Designing Information Devices and Systems I</li>
-            </ul><br>
-        <h4 id="title">RELEVANT EXPERIENCE</h4><hr>
-        <h3>
-            <span id="left">Oculate Full-Stack Software Engineer Intern</span>
-            <span id="right">July 2019 - August 2019</span>
-        </h3>
-        <h4 id="text">
-        Built the frontend and backend of an admin panel to increase efficiency for managing 
-        ophthalmology surgery consignment to oversee relations between distributors, medical 
-        practices, and surgery products from suppliers such as Hoya, Albomed GmbH, and Moria 
-        Ophthalmic. Used Ionic, Angular, Loopback, JavaScript, Typescript, HTML, CSS to create 
-        admin panel. To store and query data used MySQL, JWT for tokens and authorizations and 
-        Mocha to create tests.
-        </h4><br>
-        <h3>
-            <span id="left" style>Google Computer Science Summer Institute</span>
-            <span id="right">July 2018</span>
-        </h3>
-        <h4 id="text">
-            Participated in a three-week program in which I developed coding skills in JavaScript, 
-            Python, HTML, CSS, implementing API’s and connecting these with AppEngine to create a 
-            web app from Google Software Engineers.
-        </h4><br>
-        <h4 id="title">ACTIVITIES</h4><hr>
-        <h3>
-            <span id="left">UC Berkeley Academic Intern</span>
-            <span id="right">August 2019 - May 2020</span>
-        </h3>
-        <h4 id="text">I am a lab assistant for the course Structure and Interpretation of Computer Programs, 
-            which is a class taught in primarily Python but also Scheme and SQL. I give lab lectures 
-            and assist students with any questions regarding concepts and debugging their code.
-        </h4><br>
-        <h3>
-            <span id="left">Women in Computer Science and Engineering</span>
-            <span id="right">September 2018 - Present</span>
-        </h3>
-        <h4 id="text">
-            A group of women which help empower other women through informing others of different programs 
-            and events happening in the area as well as volunteer opportunities. Helps to develop a strong 
-            professional network.
-        </h4><br>
-        <h3>
-            <span id="left">Design Team UC Berkeley Biomedical Engineering Society</span>
-            <span id="right">September 2019 - Present</span>
-        </h3>
-        <h4 id="text">
-           I am a part of the design team which designs concepts and practical uses such as drafting and 
-           3D-printing original models, and designing websites.
-        </h4><br>
-    </div>
-    <div id="projects">
-        <h2 style="text-align: center">Projects</h2>
-        <div class="card">
-            <img src="https://image.flaticon.com/icons/svg/220/220618.svg" alt="Tweeter logo" style="width:100%" height="180">
-                <h1>Happy Tweeter</h1>
-             <p class="ctitle">Created a social media platform, similar to Twitter for tweens. Before anything can be posted 
-                 an AI determines the niceness of the message. Anything negative can not be posted. Built using Ionic and 
-                 Angular and implemented Google Firebase to store data.</p>
-        </div>
-        <div class="card">
-            <img src="https://miro.medium.com/max/700/1*r46_PENruSre5iTHcwGPTQ.png" alt="version control system image" style="width:100%" height="180">
-                <h1>Gitlet</h1>
-             <p class="ctitle">Created a version-control system that mimics some of the basic features of Git in Java. The program created a 
-                 backup system of collections of files, to save versions of project periodically and the ability to restore to previous 
-                 versions. Implemented serializable to save contents of files in bytes.</p>
-        </div>
-        <div class="card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Enigma_%28crittografia%29_-_Museo_scienza_e_tecnologia_Milano.jpg" style="width:80%" height="180">
-                <h1>Enigma</h1>
-             <p class="ctitle">The Enigma machine was an encryption device used by Germany during WWII. The original device had a set variables such as the sequence of the 
-                 alphabet used or the amount of rotors etc. I coded a version in which all of these coould be adjusted. Written in Java.</p>
-        </div>
-        <div class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR3jKdzZTNE_aN6PfGfuewN6AtsfewyO0vkj_GDfflUD_FOD7Aq&usqp=CAU" style="width:60%" height="180">
-                <h1>TechTogether Boston Hackathon</h1>
-             <p class="ctitle">Created a web app using Python, JavaScript, CSS, HTML and AppEngine. Its goal was to reduce waste by allowing users to compete 
-                 against one another. I worked with Google Login API to store an individual’s unique data and Google Maps API to connect nearby users.</p>
-        </div>
-        <div class="card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Lambda_lc.svg/200px-Lambda_lc.svg.png" style="width:60%" height="180">
-                <h1>Scheme</h1>
-             <p class="ctitle">Created a scheme interpreter in Python. Code is inputted in scheme and the program translates the code written in scheme into python and runs 
-                 the code as if it was written in scheme and gives return or error messages accordingly. </p><br><br>
-        </div>
-        <div class="card">
-            <img src="https://lh3.googleusercontent.com/proxy/gvSmggBoltKlvbOeP6tVjroXPdG-YmP4XxKhmPQEglHUD9lGvtB4oXWxOVjl0y-fNSlN4L1QnLpTwkqaWU6EAYl0ah4dV_w" style="width:70%" height="180">
-                <h1>NuPlanet</h1>
-                <h2>www.nu-planet.appspot.com</h2>
-             <p class="ctitle"> Webapp created to promote a healthier life style. It allows you to track your calories, finds the nearest gym, as well as calculates your water footprint. 
-                 Using CSS, HTML, JS, Python and AppEngine. Implements Google Login API and Maps API</p>
-        </div>
-    </div> 
-    <div id="contactcard">
-            <h2>CONTACT</h2><hr>
-            <a href="mailto:vmichel@berkeley.edu">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQwnCxkMph6ODIWaEjJMJud4lU6iON7TQIC5pzId3d_VbK_XqK_&usqp=CAU" height="80" weight="80">
-            </a>
-            <a href="https://www.linkedin.com/in/viviana-michel-459621190/">
-            <img src="data:image/png;base64,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" height="80" weight="80">
-            </a>
-            <a href="https://www.instagram.com/vivianaamichel/">
-            <img src="https://i.pinimg.com/originals/63/9b/3d/639b3dafb544d6f061fcddd2d6686ddb.png" height="90" weight="90">
-            </a>
-            
+       <div class="hello"> > Hello World! </div>
+       <div class="main"> > Viviana.Hometown</div>
+       <div class="main2"> =>  "Oxnard, California" </div>
+       <div class="main"> > Viviana.University</div>
+       <div class="main2"> =>  "University of California, Berkeley" </div>
+       <div class="main"> > Viviana.major</div>
+       <div class="main2"> =>  {"Data Science", "Computer Science"} </div>
+       <div class="main"> > Viviana.expectedGraduation </div>
+       <div class="main2" style="padding-bottom: 400px;"> =>  "May 2022" </div>
     </div>
   </body>
 </html>

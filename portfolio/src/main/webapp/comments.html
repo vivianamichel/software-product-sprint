@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Viviana Michel</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+     <div class="background">
+      <div class="sidenav">
+         <a href="/index.html">
+            <img src="images/circleme.jpg" style="padding: 40px 0px 10px 90px;" width="220" height="220">
+         </a>
+         <div class="name">VIVIANA MICHEL</div>
+         <br><br><br>
+          <a href="/resume.html">MY CV</a>
+         <a href="/resume.html">PROJECTS</a>
+         <a href="/about.html">ABOUT</a>
+         <a href="/comments.html">COMMENTS</a>
+         <br><br>
+         <a>GET IN TOUCH</a>
+         <a style="float:left; padding-left: 80px" href="mailto:vmichel@berkeley.edu">
+            <img src="images/mail.jpg" height="30" weight="30">
+         </a>
+         <a style="float:left;"href="https://www.linkedin.com/in/viviana-michel-459621190/">
+             <img src="images/linkedin.png" height="30" weight="30">
+         </a>
+         <a style="float:left;" href="https://github.com/vivianamichel">
+             <img src="images/github.png" height="30" weight="30">
+         </a>
+         <a style="float:left;" href="https://www.instagram.com/vivianaamichel/">
+            <img src="images/insta.png" height="30" weight="30">
+         </a>
+     </div>
+     <div class="hello">Comments</div>
+     <div class="main">
+       <form method="POST" action="/new-comment">
+            <input type="text" placeholder="Enter name" name="name-choice">
+            <input type="text" placeholder="Enter comment" name="comment-choice">
+            <br>
+            <select id="language" name="languageCode">
+              <option value="en">English</option>
+              <option value="zh">Chinese</option>
+              <option value="es">Spanish</option>
+              <option value="hi">Hindi</option>
+              <option value="ar">Arabic</option>
+             </select>
+            <button>Submit</button>
+          </form>
+          <button onclick="loadComments()">Past Comments</button>
+          <ul id="comment-list"></ul>
+      </div>
+      <div class="main2" style="padding-bottom: 600px;"></div>
+    </div>
+  </body>
+</html>

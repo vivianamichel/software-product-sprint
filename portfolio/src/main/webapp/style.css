@@ -1,121 +1,106 @@
-#content {
-  font-family: "Gill Sans", sans-serif;
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
-  color:#333;
+.background{
+  background-image: url("images/sfbackground3.jpg");
+  height: 100%;
 }
 
-#greeting-container {
-  margin-top: 20px;
+.background2{
+  background-image: url("images/longbackground.jpg");
 }
 
-#comment-list {
-  list-style-type: none;
+.sidenav {
+  position: fixed;
+  height: 100%; 
+  width: 400px; 
+  top: 0;
+  left: 0;
+  background-color:white;
+  opacity: 0.85;
+
 }
 
-.comment {
-  border: thin solid black;
-  display: flex;
-  margin: 10px;
-  padding: 10px;
-  width: 300px;
-}
-
-.comment span {
-  flex-grow: 1;
-}
-#resume{
-   font-family: "Gill Sans", sans-serif;
-   background-color: rgba(67, 75, 78, 0.89);
-   color: #f2f2f2;
-   padding: 10px 12px;
-}
-
-#projects{
-   font-family: "Gill Sans", sans-serif;
-   background-color: rgba(134, 147, 151, 0.89);
-   color: #f2f2f2;
-   padding: 10px 12px;
-}
-
-#contactcard{
-    background-color: black;
-    font-family: "Gill Sans", sans-serif;
-    color: white;
-    text-align:center;
-    padding: 20px;
-    margin: auto;
-    overflow: hidden;
-    bottom: 0;
-    width: 100%;
-}
-
-.topnav {
-  position: stickt;
-  background-color: #333;
-  overflow: hidden;
-}
-
-.topnav a {
-  position: sticky;
-  font-family: "Gill Sans", sans-serif;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
+.sidenav a {
+  padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 18px;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 22px;
+  color: #818181;
+  display: block;
 }
 
-.topnav a:hover {
-  position: sticky;
-  background-color: #ddd;
+.sidenav a:hover {
   color: black;
 }
 
-/* .topnav a.active {
-  background-color: rgb(150, 151, 150)
-  color: white;
-} */
 
-#left{
-     position: relative;
-}
-#right{
-     float:right;
+.name{
+    font-family: "Gill Sans", sans-serif;
+    padding-left: 90px;
+    font-size: 25px;
 }
 
-#title{
-    text-align:center;
+.hello{
+  padding-top: 70px;
+  margin-left: 460px; 
+  padding-bottom: 20px;
+  color:white;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-#major{
-    position: relative;
-    left: 20px;
+.main {
+  margin-left: 500px; 
+  padding-top: 10px;
+  color:white;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 23px;
 }
 
-#clist{
-    position: relative;
-    left: 130px;
+.main2 {
+  margin-left: 540px; 
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: "Gill Sans", sans-serif;
+  color:white;
+  font-size: 20px;
 }
 
-#text{
-    position: relative;
-    left: 110px;
-}
-
-.card {
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  float: left;
-  width: 28%;
-  padding: 30px;
-  margin: auto;
-  text-align: center;
-  color: black
-}
-
-.ctitle {
-  color: grey;
+.main3 {
+  margin-left: 565px; 
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: "Gill Sans", sans-serif;
+  color:white;
   font-size: 18px;
+}
+
+#comment-list {
+  padding: 12px 20px;
+  margin: 8px 0;
+  list-style-type: none;
+}
+
+input[type=text] {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+select{
+    width: 54%;
+    font-family: "Gill Sans", sans-serif;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+button {
+  background-color: white; 
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }

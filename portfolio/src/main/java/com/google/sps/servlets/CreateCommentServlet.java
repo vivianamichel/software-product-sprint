@@ -51,6 +51,6 @@ public class CreateCommentServlet extends HttpServlet {
        commentEntity.setProperty("userComment", translatedText);
        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
        datastore.put(commentEntity);
-       response.sendRedirect("/index.html");
+       response.sendRedirect("/comments.html");
    }
 }
