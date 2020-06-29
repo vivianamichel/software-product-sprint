@@ -1,9 +1,106 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+.background{
+  background-image: url("images/sfbackground3.jpg");
+  height: 100%;
 }
 
-#greeting-container {
-  margin-top: 20px;
+.background2{
+  background-image: url("images/longbackground.jpg");
+}
+
+.sidenav {
+  position: fixed;
+  height: 100%; 
+  width: 400px; 
+  top: 0;
+  left: 0;
+  background-color:white;
+  opacity: 0.85;
+
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 22px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: black;
+}
+
+
+.name{
+    font-family: "Gill Sans", sans-serif;
+    padding-left: 90px;
+    font-size: 25px;
+}
+
+.hello{
+  padding-top: 70px;
+  margin-left: 460px; 
+  padding-bottom: 20px;
+  color:white;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.main {
+  margin-left: 500px; 
+  padding-top: 10px;
+  color:white;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 23px;
+}
+
+.main2 {
+  margin-left: 540px; 
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: "Gill Sans", sans-serif;
+  color:white;
+  font-size: 20px;
+}
+
+.main3 {
+  margin-left: 565px; 
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: "Gill Sans", sans-serif;
+  color:white;
+  font-size: 18px;
+}
+
+#comment-list {
+  padding: 12px 20px;
+  margin: 8px 0;
+  list-style-type: none;
+}
+
+input[type=text] {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+select{
+    width: 54%;
+    font-family: "Gill Sans", sans-serif;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+button {
+  background-color: white; 
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
