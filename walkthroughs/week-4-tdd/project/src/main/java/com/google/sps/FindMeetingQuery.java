@@ -19,8 +19,21 @@ import java.util.ArrayList;
 
 public final class FindMeetingQuery {
   public Collection<TimeRange> query(Collection<Event> events, MeetingRequest request) {
-    ArrayList<TimeRange> possibleMeetingTimes = new ArrayList<TimeRange>();
     ArrayList<TimeRange> busyTimes = new ArrayList<TimeRange>();
+    ArrayList<TimeRange> possibleMeetingTimes = new ArrayList<TimeRange>();
+
+    //checks to make sure request is a valid duration
+    if (request.getDuration() > TimeRange.WHOLE_DAY.duration()){
+            return possibleMeetingTimes;
+        } 
+
+    //creates an array of the times all attendings required are busy
+    //    iterate thru all events 
+    //     check to see if attendee is attending that event if they are there are 3 cases
+    //           1. if it is first "busy" time add that to array also ensures there are no indexing errors
+    //           2. if there is overlap between this event time and the previous event time it combines them*
+    //                  *assumes there could only be overlap with previous entry in busyTimes array                   
+    //           3. if no overlap event will just be added
 
     for(Event event: events){
         TimeRange eventTimeRange = event.getWhen();
@@ -40,14 +53,20 @@ public final class FindMeetingQuery {
             }
         }
     }
+
+    //accounts the case where there is no busy time, so whole day is available 
     if (busyTimes.isEmpty()){
-        if (request.getDuration() > TimeRange.WHOLE_DAY.duration()){
-            return possibleMeetingTimes;
-        } 
         possibleMeetingTimes.add(TimeRange.fromStartEnd(TimeRange.START_OF_DAY, TimeRange.END_OF_DAY, true));
         return possibleMeetingTimes;
     }
 
+    //  goes through the busyTimes array and populates possibleMeetingTimes* (assumes all events are in order)
+    //     checks if the duration is valid at three cases 
+    //        1. if it is the first event check if there is time between start of the day and first event
+    //        2. if it is the last event check if there is time between last event and end of day
+    //        3. else check the duration in between two events
+
+    
     for(int i = 0; i < busyTimes.size(); i++){
         if (i==0) {
             if (busyTimes.get(i).start() - TimeRange.START_OF_DAY >= request.getDuration()){
